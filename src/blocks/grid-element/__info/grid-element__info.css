@@ -1,0 +1,9 @@
+.grid-element__info {
+    display: flex;
+    align-items: center;
+    width: 246px;
+    margin: 21px 15px 27px 21px;
+    justify-content: space-between;
+    color: black;
+  }
+  

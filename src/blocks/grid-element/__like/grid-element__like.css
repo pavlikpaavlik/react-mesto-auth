@@ -1,0 +1,6 @@
+.grid-element__like {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+    width: 20px;
+} 

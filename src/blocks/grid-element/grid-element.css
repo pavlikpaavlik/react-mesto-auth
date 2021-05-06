@@ -1,0 +1,19 @@
+@import url(./__photo/grid-element__photo.css);
+@import url(./__info/grid-element__info.css);
+@import url(./__title/grid-element__title.css);
+@import url(./__like/grid-element__like.css);
+@import url(./__like-button/grid-element__like-button.css);
+@import url(./__like-counter/grid-element__like-counter.css);
+@import url(./__trash/grid-element__trash.css);
+@import url(./__like-button/_theme_black/grid-element__like-button_theme_black.css);
+@import url(./__trash/_hidden/grid-element__trash_hidden.css);
+
+.grid-element {
+    position: relative;
+    max-width: 282px;
+    min-height: 362px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+  }
+  
