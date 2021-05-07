@@ -9,6 +9,12 @@
 @import url(./__photo/popup__photo.css);
 @import url(./__place/popup__place.css);
 @import url(./__field/popup__field.css);
+@import url(./__picture/popup__picture.css);
+@import url(./__text/popup__text.css);
+@import url(./__form-title/popup__form-title.css);
+@import url(./__form-input/popup__form-input.css);
+@import url(./__form-button/popup__form-button.css);
+@import url(./__form-link/popup__form-link.css);
 @import url(./__input/_value/popup__input_value_error.css);
 @import url(./__input-error/popup__input-error.css);
 @import url(./__input-error/_active/popup__input-error_active.css);

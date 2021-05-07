@@ -1,8 +1,13 @@
 @import url(./__logo/header__logo.css);
+@import url(./__container/header__container.css);
+@import url(./__email/header__email.css);
+@import url(./__link/header__link.css);
 
 .header {
     min-height: 132px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   }

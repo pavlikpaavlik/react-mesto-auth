@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from './Card';
+import Header from './Header';
+import Footer from './Footer';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 
 function Main(props) {
@@ -7,6 +9,7 @@ function Main(props) {
 
     return(
         <>
+        <Header onClick={props.onClick} loggedIn={props.loggedIn} email={props.email} text={props.text} link="/sign-up"/>
         <main className="content">
             <section className="profile page__section">   
                 <div className="profile__avatar">     
@@ -31,7 +34,8 @@ function Main(props) {
                 )
                 )}
             </div>
-        </div> 
+        </div>
+        <Footer/> 
         </>
     ) 
 }

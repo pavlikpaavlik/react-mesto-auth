@@ -1,0 +1,15 @@
+.popup__form-input {
+    width: 358px;
+    height: 27px;
+    border: none;
+    border-bottom: 2px solid white;
+    margin: 30px auto 0 auto;
+    color: white;
+    background-color: black;
+}
+
+@media (max-width: 415px) {
+    .popup__form-input {
+      max-width: 220px;
+    }
+  }
