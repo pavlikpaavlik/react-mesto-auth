@@ -17,13 +17,13 @@ import * as auth from '../utils/auth';
 function App() {
   const history = useHistory();
 
-  const [isEditProfilePopupOpen, setProfilePopupOpen] = React.useState(false)
-  const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState(false)
-  const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false)
-  const [selectedCard, setSelectedCard] = React.useState(false)
+  const [isEditProfilePopupOpen, setProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({name:'', about: '', avatar: ''});
   const [userEmail, settUserEmail] =  React.useState('');
-  const [cards, setCards] = React.useState([])
+  const [cards, setCards] = React.useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [isTooltipOpened, setIsTooltipOpened] = useState(false);
   const [isSuccessAuth, setIsSuccessAuth] = useState(false);
@@ -60,39 +60,25 @@ function App() {
   }, [loggedIn])
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-    if (!isLiked) { 
-      api.likeCard(card._id)
+    const isLiked = card.likes.some(i => i._id === currentUser._id); 
+      api.likeCard(card._id, !isLiked)
       .then((newCard) => {
-        const newCards = cards.map((c) => c._id === card._id ? newCard : c);
-        setCards(newCards);
+        setCards((cards) => cards.map((c) => c._id === card._id ? newCard : c));
       })
-      .catch((err)=>{
-        console.log(err)
-        })
-      } else {
-          api.dislikeCard(card._id)
-          .then((newCard) => {  
-            const newCards = cards.map((c) => c._id === card._id ? newCard : c);
-            setCards(newCards);
-          })
-          .catch((err)=>{
-              console.log(err)
-            })
-          }  
-  }
+        .catch((err) => {
+          console.log(err);
+        });
+    }
 
   function handleCardDelete(card) {
     const isOwn = card.owner._id === currentUser._id;
     api.deleteCard(card._id, isOwn)
     .then(() => {
-      const newCards = cards.filter((c) =>  {
-      return (c._id !== card._id) });
-      setCards(newCards);
+      setCards((cards) => cards.filter((c) => c._id !== card._id));
     })
-    .catch((err)=>{
-      console.log(err)
-    })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   function handleUpdateUser(data) {

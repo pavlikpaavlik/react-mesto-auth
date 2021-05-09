@@ -9,7 +9,7 @@ function Main(props) {
 
     return(
         <>
-        <Header onClick={props.onClick} loggedIn={props.loggedIn} email={props.email} text={props.text} link="/sign-up"/>
+        <Header onClick={props.onClick} loggedIn={props.loggedIn} email={props.email} text={props.text} link="/sign-in"/>
         <main className="content">
             <section className="profile page__section">   
                 <div className="profile__avatar">     

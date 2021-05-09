@@ -82,17 +82,16 @@ export class Api {
     }
   
   
-    likeCard(id) {
-      return fetch(`${this._url}/cards/likes/${id}`, {
+    likeCard(id, isLiked) {
+      if(isLiked) {
+       return fetch(`${this._url}/cards/likes/${id}`, {
         method: 'PUT',
         headers: this._headers,
       })
         .then(res => {
           return this._parseResult(res)
         })
-    }
-  
-    dislikeCard(id) {
+  } else {
       return fetch(`${this._url}/cards/likes/${id}`, {
         method: 'DELETE',
         headers: this._headers,
@@ -101,8 +100,8 @@ export class Api {
           return this._parseResult(res)
         })
     }
-  
   }
+}
   
   
    const api = new Api({
