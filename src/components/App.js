@@ -234,7 +234,7 @@ return (
     <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateAvatar} /> 
     <PopupWithForm name="popupConfirm" title="Вы уверены?" textBtn="Да" />
     <ImagePopup onClose={closeAllPopups} card={selectedCard} />
-    <InfoTooltip isOpen={isTooltipOpened} onClose={closeInfoPopup} name="tooltip" auth={isSuccessAuth}/>
+    <InfoTooltip isOpen={isTooltipOpened} onClose={closeInfoPopup} name="tooltip" isSuccessAuth={isSuccessAuth}/>
     </div>
   </div>
   </CurrentUserContext.Provider>
